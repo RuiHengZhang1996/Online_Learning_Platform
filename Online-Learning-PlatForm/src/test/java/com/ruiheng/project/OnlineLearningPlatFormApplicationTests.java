@@ -1,5 +1,6 @@
 package com.ruiheng.project;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -26,5 +27,33 @@ class OnlineLearningPlatFormApplicationTests {
 		System.out.println(users);
 		
 	}
+	
+	@Test
+	public void addUser() {
+		User user = new User();
+		
+		user.setName("CaaaaCC");
+		user.setAge(12);
+		user.setEmail("CCCCCcc@qq.com");
+		
+		/*
+		 * user.setCreateTime(new Date()); user.setUpdateTime(new Date());
+		 */
+		int insert = userMapper.insert(user);
+		System.out.println(insert);
+	}
+	
+	@Test
+	public void updateUser() {
+		
+		User user = new User();
+		user.setId(1373018507472830465L);
+		user.setAge(120);
+		
+		
+		int row = userMapper.updateById(user);
+		System.out.println(row);
+	}
+	
 
 }
